@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Fitness</title>
+    <link rel="icon" href="assets/Logo.png" type="image/gif" sizes="16x16" />
+    <script
+      src="https://kit.fontawesome.com/8b4cba5979.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <script defer type="module" src="JS/main.js"></script>
+  </head>
+  <body class="">
+    <div
+      class="container relative z-0 max-w-full bg-white font-karla text-lg text-black dark:bg-gray-700 dark:text-white"
+    >
+      <div class="accountForum"></div>
+      <nav
+        class="left-0 top-0 z-10 flex h-40 flex-col items-center justify-between rounded-md border-b-4 border-white bg-slate-300 dark:border-gray-700 dark:bg-slate-600 sm:h-24 sm:flex-row"
+      >
+        <div class="logo">
+          <img src="assets/Fitness-logo.png" alt="" />
+        </div>
+        <div
+          class="indicators flex w-[370px] flex-col items-center justify-between lg:w-1/3"
+        >
+          <div
+            class="accountInfo flex items-center justify-around font-extrabold"
+          >
+            <button
+              type="button"
+              class="authenticate m-2 rounded-md bg-slate-400 hover:bg-slate-50 active:bg-slate-200 dark:bg-gray-700 dark:hover:bg-slate-700 dark:active:bg-[#5b5e7e]"
+            ></button>
+            <select
+              name="switchMode"
+              id="switchMode"
+              title="switchMode"
+              class="h-8 rounded-md bg-slate-400 dark:bg-gray-700"
+            >
+              <option value="light" id="light" selected>☀️</option>
+              <option value="dark" id="dark">🌙</option>
+            </select>
+          </div>
+          <div class="pickDate">
+            <label for="date" class="font-bold">Choose a date:</label>
+            <input
+              type="date"
+              name="Pick a date"
+              id="date"
+              class="ml-3 rounded-lg border-2 bg-slate-400 text-black dark:border-gray-700 dark:bg-gray-700 dark:text-white"
+            />
+          </div>
+        </div>
+      </nav>
+      <div
+        class="mainContent grid grid-cols-1 grid-rows-6 gap-1 md:grid-cols-3"
+      >
+        <article
+          class="quotes row-span-1 flex h-full w-full items-center rounded-sm bg-slate-300 dark:bg-slate-600 md:row-span-2"
+        ></article>
+        <div
+          class="caloriesTracking row-span-3 rounded-sm bg-slate-300 p-3 dark:bg-slate-600 md:col-span-2 md:row-span-4"
+        >
+          <div
+            class="inputsForTracking row-span-2 flex h-2/3 w-full flex-col md:h-1/2 md:flex-row md:items-center md:justify-between"
+          >
+            <div
+              class="foodTracking mb-3 flex h-96 w-full flex-col items-center rounded-lg bg-slate-200 dark:bg-slate-500 md:mb-0 md:w-1/2"
+            >
+              <h2 class="text-xl font-bold">Food Ideas</h2>
+              <div
+                class="foodItems flex h-5/6 w-11/12 flex-col items-center overflow-scroll rounded-md bg-slate-300 p-5 dark:bg-slate-600"
+              ></div>
+              <div class="foodSearch m-2.5 w-11/12 translate-x-3">
+                <div class="flex w-full justify-around">
+                  <input
+                    type="text"
+                    id="foodInput"
+                    placeholder="Qt + food🍴"
+                    class="w-10/12 rounded-md border border-black text-black focus:outline-none"
+                  />
+                  <button
+                    type="button"
+                    class="foodSearchButton active:text-slate-700"
+                  >
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="exerciseTracking flex h-96 flex-col items-center rounded-lg bg-slate-200 dark:bg-slate-500 md:ml-2 md:w-1/2"
+            >
+              <h2 class="text-xl font-bold">Exercise Ideas</h2>
+              <div
+                class="exerciseItems h-5/6 w-11/12 overflow-scroll rounded-md bg-slate-300 p-5 dark:bg-slate-600"
+              ></div>
+              <div class="exerciseSearch m-2.5 w-11/12 translate-x-3">
+                <div class="flex w-full justify-around">
+                  <input
+                    type="text"
+                    id="exerciseInput"
+                    placeholder="Exe duration⏱️ + Exe"
+                    class="w-10/12 rounded-md border border-black text-black focus:outline-none"
+                  />
+                  <button
+                    type="button"
+                    class="exerciseSearchButton active:text-slate-700"
+                  >
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="illustrationCalories flex h-1/3 flex-col items-center justify-around rounded-lg bg-slate-200 p-6 pb-3 pt-0 dark:bg-slate-500 md:h-1/2"
+          >
+            <div
+              class="toggle flex h-1/6 w-11/12 flex-col items-center justify-around"
+            >
+              <label for="illustrateSelectLine" class="text-xl font-bold">
+                Illustrate✨
+              </label>
+              <select
+                id="illustrateSelectLine"
+                title="IllustrateSelect"
+                class="rounded-md bg-slate-400 p-1 dark:bg-slate-600"
+              >
+                <option value="Pick an Option" selected>Pick an Option</option>
+                <option value="CaloriesConsumed/Burned">
+                  CaloriesConsumed/Burned
+                </option>
+                <option value="proteinConsumed/caloriesBurned">
+                  proteinConsumed/caloriesBurned
+                </option>
+              </select>
+            </div>
+            <div
+              class="full flex h-5/6 w-full items-center justify-center rounded-lg bg-slate-300 p-3 dark:bg-slate-600"
+            >
+              <canvas id="myChartLine"></canvas>
+            </div>
+          </div>
+        </div>
+        <div
+          class="illustrationBody row-span-1 rounded-sm bg-slate-300 dark:bg-slate-600 md:row-span-2"
+        >
+          <div
+            class="radarChart m-3 flex h-96 flex-col items-center justify-around rounded-lg bg-slate-200 dark:bg-slate-500"
+          >
+            <div class="toggle flex h-12 w-11/12 items-center justify-around">
+              <div class="illustrate flex flex-col items-center justify-around">
+                <label for="illustrateSelectDoughnut" class="text-xl font-bold">
+                  Illustrate✨
+                </label>
+                <select
+                  id="illustrateSelectDoughnut"
+                  title="IllustrateSelect"
+                  class="rounded-md bg-slate-400 dark:bg-slate-600"
+                >
+                  <option value="Pick an Option" selected>
+                    Pick an Option
+                  </option>
+                  <option value="Diet ratio">Diet ratio</option>
+                  <option value="ExerciseImpactAI">
+                    Exercise Impact(AI 🪄)
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div
+              class="see m-3 flex h-5/6 w-11/12 flex-col items-center justify-center rounded-lg bg-slate-300 p-3 dark:bg-slate-600"
+            >
+              <canvas id="myChartDoughnut"></canvas>
+            </div>
+          </div>
+        </div>
+        <div
+          class="advice row-span-1 flex items-center justify-center rounded-sm bg-slate-300 dark:bg-slate-600 md:col-span-3 md:row-span-2"
+        >
+          <div
+            class="m-3 flex h-[95%] w-full flex-col items-center justify-evenly rounded-lg bg-slate-200 p-5 pt-0 dark:bg-slate-500"
+          >
+            <h1 class="text-lg font-bold">Any Questions 🤓☝️?</h1>
+            <div
+              class="displayAdvice m-3 h-72 w-full overflow-y-scroll rounded-lg bg-slate-300 p-5 dark:bg-slate-600"
+            ></div>
+            <div class="flex w-full justify-center">
+              <input
+                type="text"
+                name="askAdvices"
+                id="askAdviceInput"
+                placeholder="Ask for advices! (Powered by Gemini AI🪄)"
+                class="w-10/12 rounded-md text-black"
+              />
+              <button
+                type="submit"
+                class="ml-2 active:text-slate-700"
+                id="askAdviceSubmit"
+              >
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
