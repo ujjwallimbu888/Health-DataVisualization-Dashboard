@@ -330,3 +330,9 @@ authenticate.addEventListener("click", function () {
     exitAuthPage(fillAccountDetails); //exiting by clicking "X" button
   });
 });
+
+const practiceGit = function () {
+  console.log("HHEHEEHEHHEHEHEHEH");
+};
+
+practiceGit();
