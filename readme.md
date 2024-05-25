@@ -1,4 +1,4 @@
-# Fitness Tracker Documentation
+# Health-DataVisualization-Dashboard Documentation
 
 ## Introduction
 
