@@ -1,3 +1,6 @@
+//Importing necessary modules
+require("dotenv").config();
+
 //Importing Libraries from Gemini and charts to illustarte data and other modules
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import Chart from "chart.js/auto";
@@ -27,7 +30,7 @@ export const apiCall = async function (category, query) {
     const response = await fetch(value, {
       method: "GET",
       headers: {
-        "X-Api-Key": `3IJ2IeLqRWuzn5/0eAHE0A==9daNn8CSU4Jn0ak5`,
+        "X-Api-Key": process.env.NET_NINJA_API_KEY,
         "Content-Type": "application/json",
       },
     });
@@ -47,7 +50,7 @@ export const apiCall = async function (category, query) {
 };
 
 //#                            Use of LLM and programming it to provide desired output
-const genAI = new GoogleGenerativeAI(`AIzaSyBir86Z55h4ydo01n378h3OGxFfn6DAOWs`);
+const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
 export const runLLM = async function (category = "exeImpact", input) {
   // For text-only input, use the gemini-pro model
   const model = genAI.getGenerativeModel({ model: "gemini-pro" });
