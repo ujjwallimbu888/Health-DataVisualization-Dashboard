@@ -51,7 +51,7 @@ Although, we can see nutritional breakdown from diet and calories burned from ex
 - Once the diet or exercise has been added to the food/exercise container if the user has followed the above rules, then such data are stored in local storage.
 - Multiple item of the same food/exercise name is merged into one item.
 - By toggling the dates where we’ve logged in the relevant data, we can see those data.
-1. **In Graph 📈**
+2. **In Graph 📈**
 - ▶️ Right side graph shows the data of the last 7 days used (*doesn’t have to be consecutive**)
     - Calories consumed / Calories burned (to monitor calorie deficit or pattern in general)
     - Calories consumed / Protein consumed ( to monitor calorie consumption compared to protein consumption )
@@ -82,9 +82,7 @@ Local storage and session storage has been utilized to implement the feature tha
 
 Ninja API has been utilized to return the object based on input and it’s manipulated to get the desired results. 
 
-However, sometimes it returns weird value. 
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/1799f166-dcd3-4114-bba1-fb4b6e03600d/8ba0d570-cb28-4118-b4b4-23d560d117a2/Untitled.png)
+However, sometimes it returns weird value. Like 20g food may have calories higher than 20g which is impossible. But upon multiple testings, it's APIs fault.
 
 ### Data Visualization
 
