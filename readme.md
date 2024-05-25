@@ -95,7 +95,7 @@ Once the user clicks on the **exercise impact AI 🪄**, the data of the current
 - analyzes all those data, ranks each exercise with the above format
 - after creating all those objects, median is calculated and returned with the same format
 - the returned value is in string format and then it’s converted to object using object.parse().
-1. **For the rest of the visualization**
+2. **For the rest of the visualization**
 
 ChartJs has been used for visualizing the data returned from Ninja API based on inputs. 
 
