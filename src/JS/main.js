@@ -144,7 +144,7 @@ foodSearchButton.addEventListener("click", () => {
       );
     }
 
-    const foodString = `${currentUser}_${selectedDate}_food_${value.name}`;
+    const foodString = `${currentUser}_${selectedDate}_food_${value.name}`; //It's used to return only when value is defined.
 
     foodItems.firstElementChild.remove(); //removes the loading animation, if data is fetched
 
@@ -160,35 +160,37 @@ foodSearchButton.addEventListener("click", () => {
       ),
     );
 
-    if (currentUser !== null) {
-      if (!localStorage.getItem(foodString)) {
-        localStorage.setItem(foodString, [
-          value.calories,
-          value.protein_g,
-          value.sugar_g,
-          value.carbohydrates_total_g,
-        ]);
-      } else {
-        localStorage.setItem(foodString, [
-          Math.ceil(
-            +value.calories + +localStorage.getItem(foodString).split(",")[0],
-          ),
-          Math.ceil(
-            +value.protein_g + +localStorage.getItem(foodString).split(",")[1],
-          ),
+    //Recording data only if user is logged in
+    if (currentUser === null) return;
 
-          Math.ceil(
-            +value.sugar_g + +localStorage.getItem(foodString).split(",")[2],
-          ),
-          Math.ceil(
-            +value.carbohydrates_total_g +
-              +localStorage.getItem(foodString).split(",")[3],
-          ),
-        ]);
-      }
+    //If the result already exists, then the new data fetched is added with the previous to update.
+    if (!localStorage.getItem(foodString)) {
+      localStorage.setItem(foodString, [
+        value.calories,
+        value.protein_g,
+        value.sugar_g,
+        value.carbohydrates_total_g,
+      ]);
+    } else {
+      localStorage.setItem(foodString, [
+        Math.ceil(
+          +value.calories + +localStorage.getItem(foodString).split(",")[0],
+        ),
+        Math.ceil(
+          +value.protein_g + +localStorage.getItem(foodString).split(",")[1],
+        ),
 
-      nutritionalTotalsByDay();
+        Math.ceil(
+          +value.sugar_g + +localStorage.getItem(foodString).split(",")[2],
+        ),
+        Math.ceil(
+          +value.carbohydrates_total_g +
+            +localStorage.getItem(foodString).split(",")[3],
+        ),
+      ]);
     }
+
+    nutritionalTotalsByDay();
   })();
 });
 
@@ -231,23 +233,24 @@ exerciseSearchButton.addEventListener("click", function () {
     );
 
     //data is stored, if user is logged in
-    if (currentUser !== null) {
-      if (!localStorage.getItem(exerciseString)) {
-        localStorage.setItem(exerciseString, [exerciseDuration, calcCalories]);
-      } else {
-        localStorage.setItem(exerciseString, [
-          Math.ceil(
-            +exerciseDuration +
-              +localStorage.getItem(exerciseString).split(",")[0],
-          ),
-          Math.ceil(
-            +calcCalories + +localStorage.getItem(exerciseString).split(",")[1],
-          ),
-        ]);
-      }
+    if (currentUser === null) return;
 
-      nutritionalTotalsByDay();
+    //If the result already exists, then the new data fetched is added with the previous to update.
+    if (!localStorage.getItem(exerciseString)) {
+      localStorage.setItem(exerciseString, [exerciseDuration, calcCalories]);
+    } else {
+      localStorage.setItem(exerciseString, [
+        Math.ceil(
+          +exerciseDuration +
+            +localStorage.getItem(exerciseString).split(",")[0],
+        ),
+        Math.ceil(
+          +calcCalories + +localStorage.getItem(exerciseString).split(",")[1],
+        ),
+      ]);
     }
+
+    nutritionalTotalsByDay();
   })();
 });
 
@@ -310,7 +313,7 @@ authenticate.addEventListener("click", function () {
         ).value;
 
         //Returning alert if same user exists or passwords don't match or the inputs are empty
-        if (userCreate === "" && userPassword === "")
+        if (userCreate === "" || userPassword === "")
           return alert(
             "The input fields for name and/or password can't be empty!",
           );
