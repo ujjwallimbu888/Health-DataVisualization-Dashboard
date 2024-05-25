@@ -61,38 +61,38 @@ document.querySelector(`#switchMode`).addEventListener("click", function (e) {
   }
 })();
 
-//#                        Displays message to the user to correctly user app
-displayMessage(
-  `<ul>
-  <li class=" list-disc ml-2">Please create an account so that you progress is being tracked.</li>
-  <li class=" list-disc ml-2">And users are requested to select the date after logging in for it to be recorded with date.🙏.</li>
-  </ul>`,
-  6001,
-);
+// //#                        Displays message to the user to correctly user app
+// displayMessage(
+//   `<ul>
+//   <li class=" list-disc ml-2">Please create an account so that you progress is being tracked.</li>
+//   <li class=" list-disc ml-2">And users are requested to select the date after logging in for it to be recorded with date.🙏.</li>
+//   </ul>`,
+//   6001,
+// );
 
-//#                        Displays quotes to motivate healthy lifestyles
-loadingAnimation(document.querySelector(`.quotes`), "w-full", "h-full");
-(async () => {
-  const [value] = await apiCall("fitness");
-  quotes.firstElementChild.remove();
+// //#                        Displays quotes to motivate healthy lifestyles
+// loadingAnimation(document.querySelector(`.quotes`), "w-full", "h-full");
+// (async () => {
+//   const [value] = await apiCall("fitness");
+//   quotes.firstElementChild.remove();
 
-  quotes.insertAdjacentHTML(
-    "afterbegin",
-    `
-    <div
-          class="flex h-full w-full flex-col justify-evenly rounded-md bg-gradient-to-tr from-slate-500 via-slate-300 to-slate-100 dark:bg-gradient-to-tr dark:from-slate-900 dark:via-slate-700 dark:to-slate-500 p-4"
-        >
-          <!-- Maximum quote is supposed as 50 Words. -->
-          <blockquote
-            class="motivationalQuote text-xl font-semibold italic md:text-base"
-          >
-            "${value.quote}"
-          </blockquote>
-          <cite class="author self-end p-0.5 font-bold"> - ${value.author} </cite>
-        </div>
-`,
-  );
-})();
+//   quotes.insertAdjacentHTML(
+//     "afterbegin",
+//     `
+//     <div
+//           class="flex h-full w-full flex-col justify-evenly rounded-md bg-gradient-to-tr from-slate-500 via-slate-300 to-slate-100 dark:bg-gradient-to-tr dark:from-slate-900 dark:via-slate-700 dark:to-slate-500 p-4"
+//         >
+//           <!-- Maximum quote is supposed as 50 Words. -->
+//           <blockquote
+//             class="motivationalQuote text-xl font-semibold italic md:text-base"
+//           >
+//             "${value.quote}"
+//           </blockquote>
+//           <cite class="author self-end p-0.5 font-bold"> - ${value.author} </cite>
+//         </div>
+// `,
+//   );
+// })();
 
 //#                         Implementing  displaying date accurate contents features
 document.querySelector(`#date`).addEventListener("change", function (e) {

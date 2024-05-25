@@ -85,7 +85,7 @@ export const nutritionalTotalsByDay = function () {
   let totalCalBurned = 0;
 
   //adding the data retrieved from localStorage to the food/exercise container
-  returnedDataObject.entries(localStorage).forEach(([key, value]) => {
+  Object.entries(localStorage).forEach(([key, value]) => {
     if (key.includes(`${currentUser}_${selectedDate}_food`)) {
       const [cal, prot, sugar, carbs] = value.split(",");
       totalCalConsumed += +cal;
